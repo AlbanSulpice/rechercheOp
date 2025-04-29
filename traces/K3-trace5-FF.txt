@@ -1,0 +1,15 @@
+
+Capacités (prop5) :
+  s a b c d e f t
+s 0 7 4 0 0 0 0 0
+a 0 0 0 5 0 0 0 0
+b 0 0 0 0 1 0 0 0
+c 0 0 0 0 0 8 0 0
+d 0 0 0 0 0 4 0 0
+e 0 0 0 0 0 0 3 0
+f 0 0 0 0 0 0 0 8
+t 0 0 0 0 0 0 0 0
+
+ Itération 1
+Chaîne améliorante : s → a → c → e → f → t
+→ Flot possible sur cette chaîne : 3

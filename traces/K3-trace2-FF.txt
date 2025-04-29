@@ -1,0 +1,33 @@
+
+Capacités (prop2) :
+    s  a  b  c  d  e  f  g  h  t
+ s  0 16  3  0  0  0  0  0  0  0
+ a  0  0  0  8  3  0  0  0  0  0
+ b  0  0  0  0  3  0  0  0  0  0
+ c  0  0  0  0  0  3  4  0  0  0
+ d  0  0  0  0  0  0  7  0  0  0
+ e  0  0  0  0  0  0  0  5  7  0
+ f  0  0  0  0  0  0  0  0  1  8
+ g  0  0  0  0  0  0  0  0  0  3
+ h  0  0  0  0  0  0  0  0  0  4
+ t  0  0  0  0  0  0  0  0  0  0
+
+ Itération 1
+Chaîne améliorante : s → a → c → f → t
+→ Flot possible sur cette chaîne : 4
+
+ Itération 2
+Chaîne améliorante : s → a → d → f → t
+→ Flot possible sur cette chaîne : 3
+
+ Itération 3
+Chaîne améliorante : s → b → d → f → t
+→ Flot possible sur cette chaîne : 1
+
+ Itération 4
+Chaîne améliorante : s → a → c → e → g → t
+→ Flot possible sur cette chaîne : 3
+
+ Itération 5
+Chaîne améliorante : s → b → d → f → h → t
+→ Flot possible sur cette chaîne : 1

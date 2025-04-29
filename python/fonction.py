@@ -1,5 +1,6 @@
 import os
 from collections import deque
+from contextlib import redirect_stdout
 
 def lire_graphe_sans_cout(nom_fichier):
     chemin = os.path.join("..", "prop", nom_fichier)
@@ -214,3 +215,10 @@ def flot_cout_minimal(capacites, couts, s, t, flot_demande, afficher=False):
             iteration += 1
 
     return total_cout, flots
+
+def executer_et_sauver_trace(nom_fichier_trace, fonction_a_executer):
+    chemin = os.path.join("..", "traces", nom_fichier_trace)
+    os.makedirs(os.path.dirname(chemin), exist_ok=True)
+    with open(chemin, "w", encoding="utf-8") as f:
+        with redirect_stdout(f):
+            fonction_a_executer()

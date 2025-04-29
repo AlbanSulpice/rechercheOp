@@ -1,0 +1,190 @@
+
+Capacités (prop2) :
+    s  a  b  c  d  e  f  g  h  t
+ s  0 16  3  0  0  0  0  0  0  0
+ a  0  0  0  8  3  0  0  0  0  0
+ b  0  0  0  0  3  0  0  0  0  0
+ c  0  0  0  0  0  3  4  0  0  0
+ d  0  0  0  0  0  0  7  0  0  0
+ e  0  0  0  0  0  0  0  5  7  0
+ f  0  0  0  0  0  0  0  0  1  8
+ g  0  0  0  0  0  0  0  0  0  3
+ h  0  0  0  0  0  0  0  0  0  4
+ t  0  0  0  0  0  0  0  0  0  0
+
+ Itération 1
+Réétiqueter a à hauteur 1
+
+ Itération 2
+Réétiqueter b à hauteur 1
+
+ Itération 3
+Pousser 8 de a vers c
+
+ Itération 4
+Pousser 3 de b vers d
+
+ Itération 5
+Réétiqueter c à hauteur 1
+
+ Itération 6
+Réétiqueter d à hauteur 1
+
+ Itération 7
+Réétiqueter a à hauteur 2
+
+ Itération 8
+Pousser 3 de c vers e
+
+ Itération 9
+Pousser 3 de d vers f
+
+ Itération 10
+Réétiqueter e à hauteur 1
+
+ Itération 11
+Réétiqueter f à hauteur 1
+
+ Itération 12
+Pousser 3 de a vers d
+
+ Itération 13
+Réétiqueter c à hauteur 2
+
+ Itération 14
+Réétiqueter d à hauteur 2
+
+ Itération 15
+Pousser 3 de e vers g
+
+ Itération 16
+Pousser 1 de f vers h
+
+ Itération 17
+Réétiqueter g à hauteur 1
+
+ Itération 18
+Réétiqueter h à hauteur 1
+
+ Itération 19
+Réétiqueter a à hauteur 11
+
+ Itération 20
+Pousser 4 de c vers f
+
+ Itération 21
+Pousser 3 de d vers b
+
+ Itération 22
+Pousser 6 de f vers t
+
+ Itération 23
+Pousser 3 de g vers t
+
+ Itération 24
+Pousser 1 de h vers t
+
+ Itération 25
+Pousser 5 de a vers s
+
+ Itération 26
+Réétiqueter b à hauteur 3
+
+ Itération 27
+Réétiqueter c à hauteur 12
+
+ Itération 28
+Pousser 3 de b vers d
+
+ Itération 29
+Pousser 1 de c vers a
+
+ Itération 30
+Pousser 3 de d vers f
+
+ Itération 31
+Pousser 2 de f vers t
+
+ Itération 32
+Pousser 1 de a vers s
+
+ Itération 33
+Réétiqueter f à hauteur 3
+
+ Itération 34
+Pousser 1 de f vers d
+
+ Itération 35
+Réétiqueter d à hauteur 4
+
+ Itération 36
+Pousser 1 de d vers b
+
+ Itération 37
+Réétiqueter b à hauteur 5
+
+ Itération 38
+Pousser 1 de b vers d
+
+ Itération 39
+Pousser 1 de d vers f
+
+ Itération 40
+Réétiqueter f à hauteur 5
+
+ Itération 41
+Pousser 1 de f vers d
+
+ Itération 42
+Réétiqueter d à hauteur 6
+
+ Itération 43
+Pousser 1 de d vers b
+
+ Itération 44
+Réétiqueter b à hauteur 7
+
+ Itération 45
+Pousser 1 de b vers d
+
+ Itération 46
+Pousser 1 de d vers f
+
+ Itération 47
+Réétiqueter f à hauteur 7
+
+ Itération 48
+Pousser 1 de f vers d
+
+ Itération 49
+Réétiqueter d à hauteur 8
+
+ Itération 50
+Pousser 1 de d vers b
+
+ Itération 51
+Réétiqueter b à hauteur 9
+
+ Itération 52
+Pousser 1 de b vers d
+
+ Itération 53
+Pousser 1 de d vers f
+
+ Itération 54
+Réétiqueter f à hauteur 9
+
+ Itération 55
+Pousser 1 de f vers d
+
+ Itération 56
+Réétiqueter d à hauteur 10
+
+ Itération 57
+Pousser 1 de d vers b
+
+ Itération 58
+Réétiqueter b à hauteur 11
+
+ Itération 59
+Pousser 1 de b vers s

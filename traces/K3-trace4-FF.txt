@@ -1,0 +1,18 @@
+
+Capacités (prop4) :
+  s a b c d e t
+s 0 5 9 0 0 0 0
+a 0 0 0 7 4 0 0
+b 0 0 0 0 6 0 0
+c 0 0 0 0 0 5 0
+d 0 0 0 0 0 6 0
+e 0 0 0 0 0 0 7
+t 0 0 0 0 0 0 0
+
+ Itération 1
+Chaîne améliorante : s → a → c → e → t
+→ Flot possible sur cette chaîne : 5
+
+ Itération 2
+Chaîne améliorante : s → b → d → e → t
+→ Flot possible sur cette chaîne : 2
