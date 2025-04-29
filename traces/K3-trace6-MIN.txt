@@ -1,0 +1,47 @@
+Capacités (prop6) :
+
+Matrice :
+      s   a   b   c   d   t
+  s   0   4   2   0   0   0
+  a   0   0   0   1   4   0
+  b   0   0   0   4   2   0
+  c   0   0   0   0   0   2
+  d   0   0   0   0   0   2
+  t   0   0   0   0   0   0
+
+Coûts (prop6) :
+
+Matrice :
+      s   a   b   c   d   t
+  s   0   3   1   0   0   0
+  a   0   0   0   4   2   0
+  b   0   0   0   1   5   0
+  c   0   0   0   0   0   1
+  d   0   0   0   0   0   3
+  t   0   0   0   0   0   0
+
+Le graphe résiduel initial est le graphe de départ.
+
+
+ Itération 1
+Chaîne de coût minimal : s → b → c → t
+→ Flot envoyé sur cette chaîne : 2
+→ Coût actuel : 6
+
+ Itération 2
+Chaîne de coût minimal : s → a → d → t
+→ Flot envoyé sur cette chaîne : 2
+→ Coût actuel : 22
+Impossible d'envoyer tout le flot demandé
+
+Affichage du flot
+      s   a   b   c   d   t
+  s     2/4 2/2            
+  a             0/1 2/4    
+  b             2/4 0/2    
+  c                     2/2
+  d                     2/2
+  t                        
+
+Valeur du flot envoyé : 5
+Coût total : 22

@@ -1,0 +1,44 @@
+Capacités (prop8) :
+
+Matrice :
+      s   a   b   c   d   e   t
+  s   0  31  25  27   0   0   0
+  a   0   0   0   0  20  30   0
+  b   0   0   0   0  12  10   0
+  c   0   0   0   0   0   6  40
+  d   0   0   0   0   0  35  30
+  e   0   0   0   0   0   0  11
+  t   0   0   0   0   0   0   0
+
+Coûts (prop8) :
+
+Matrice :
+      s   a   b   c   d   e   t
+  s   0   8   4  15   0   0   0
+  a   0   0   0   0   7   8   0
+  b   0   0   0   0  16  15   0
+  c   0   0   0   0   0   3  15
+  d   0   0   0   0   0  20  22
+  e   0   0   0   0   0   0  14
+  t   0   0   0   0   0   0   0
+
+Le graphe résiduel initial est le graphe de départ.
+
+
+ Itération 1
+Chaîne de coût minimal : s → c → t
+→ Flot envoyé sur cette chaîne : 5
+→ Coût actuel : 150
+
+Affichage du flot
+        s    a    b    c    d    e    t
+   s      0/31 0/25 5/27               
+   a                     0/20 0/30     
+   b                     0/12 0/10     
+   c                           0/6 5/40
+   d                          0/35 0/30
+   e                               0/11
+   t                                   
+
+Valeur du flot envoyé : 5
+Coût total : 150
