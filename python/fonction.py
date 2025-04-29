@@ -1,4 +1,5 @@
 import os
+from ford import *
 from collections import deque
 from contextlib import redirect_stdout
 
@@ -74,7 +75,11 @@ def ford_fulkerson(capacites, s, t, afficher=False):
     max_flow = 0
     iteration = 1
 
-    while bfs(capacites, flots, s, t, parents):
+    if afficher:
+        afficher_matrice(capacites, "Affichage de la table de capacité")
+        print("Le graphe résiduel initial est le graphe de départ.\n")
+
+    while bfs_augmentant(capacites, flots, s, t, parents):
         chemin = []
         courant = t
         flot_chemin = float('inf')
@@ -93,11 +98,21 @@ def ford_fulkerson(capacites, s, t, afficher=False):
         max_flow += flot_chemin
 
         if afficher:
-            print(f"\n Itération {iteration}")
+            print(f"Itération {iteration}")
+            print("Le parcours en largeur")
+            afficher_parcours(parents, s, n)
+
             chaine_affichable = " → ".join(nom_sommet(u, n) for u, _ in chemin) + f" → {nom_sommet(t, n)}"
-            print(f"Chaîne améliorante : {chaine_affichable}")
-            print(f"→ Flot possible sur cette chaîne : {flot_chemin}")
-            iteration += 1
+            print(f"Détection d'une chaîne améliorante : {chaine_affichable} de flot {flot_chemin}")
+
+            afficher_matrice(graphe_residuel(capacites, flots), "Modifications sur le graphe résiduel")
+            print()
+
+        iteration += 1
+
+    if afficher:
+        afficher_matrice_flot(flots, capacites, "Affichage du flot max")
+        print(f"\nValeur du flot max = {max_flow}")
 
     return max_flow, flots
 
@@ -222,3 +237,24 @@ def executer_et_sauver_trace(nom_fichier_trace, fonction_a_executer):
     with open(chemin, "w", encoding="utf-8") as f:
         with redirect_stdout(f):
             fonction_a_executer()
+
+def afficher_matrice_flot(flots, capacites, titre="Flot final"):
+    n = len(flots)
+    print(f"\n{titre}")
+
+    largeur = max(len(f"{flots[i][j]}/{capacites[i][j]}")
+                  for i in range(n) for j in range(n) if capacites[i][j] > 0)
+
+    # En-tête
+    header = [" "] + [nom_sommet(j, n) for j in range(n)]
+    print(" ".join(f"{col:>{largeur}}" for col in header))
+
+    for i in range(n):
+        ligne = [nom_sommet(i, n)]
+        for j in range(n):
+            if capacites[i][j] > 0:
+                texte = f"{flots[i][j]}/{capacites[i][j]}"
+            else:
+                texte = " "
+            ligne.append(texte)
+        print(" ".join(f"{val:>{largeur}}" for val in ligne))
