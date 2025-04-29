@@ -92,7 +92,7 @@ def ford_fulkerson(capacites, s, t, afficher=False):
         max_flow += flot_chemin
 
         if afficher:
-            print(f"\n🔁 Itération {iteration}")
+            print(f"\n Itération {iteration}")
             chaine_affichable = " → ".join(nom_sommet(u, n) for u, _ in chemin) + f" → {nom_sommet(t, n)}"
             print(f"Chaîne améliorante : {chaine_affichable}")
             print(f"→ Flot possible sur cette chaîne : {flot_chemin}")
@@ -135,7 +135,7 @@ def pousser_reetiquer(capacites, s, t, afficher=False):
                         exces[v] += delta
 
                         if afficher:
-                            print(f"\n🔁 Itération {iteration}")
+                            print(f"\n Itération {iteration}")
                             print(f"Pousser {delta} de {nom_sommet(u, n)} vers {nom_sommet(v, n)}")
                         iteration += 1
                         break
@@ -148,10 +148,69 @@ def pousser_reetiquer(capacites, s, t, afficher=False):
                     if min_hauteur < float('inf'):
                         hauteurs[u] = min_hauteur + 1
                         if afficher:
-                            print(f"\n🔁 Itération {iteration}")
+                            print(f"\n Itération {iteration}")
                             print(f"Réétiqueter {nom_sommet(u, n)} à hauteur {hauteurs[u]}")
                         iteration += 1
 
     max_flow = sum(flots[s][v] for v in range(n))
     return max_flow, flots
 
+def bellman(capacites, couts, flots, s):
+    n = len(capacites)
+    dist = [float('inf')] * n
+    parent = [-1] * n
+    dist[s] = 0
+
+    for _ in range(n - 1):
+        for u in range(n):
+            for v in range(n):
+                if capacites[u][v] - flots[u][v] > 0 and dist[v] > dist[u] + couts[u][v]:
+                    dist[v] = dist[u] + couts[u][v]
+                    parent[v] = u
+
+    return dist, parent
+
+def flot_cout_minimal(capacites, couts, s, t, flot_demande, afficher=False):
+    n = len(capacites)
+    flots = [[0] * n for _ in range(n)]
+    total_cout = 0
+    courant_flot = 0
+    iteration = 1
+
+    while courant_flot < flot_demande:
+        dist, parent = bellman(capacites, couts, flots, s)
+
+        if parent[t] == -1:
+            print("Impossible d'envoyer tout le flot demandé")
+            break
+
+        # Déterminer le flot maximum possible sur ce chemin
+        chemin = []
+        v = t
+        flot_chemin = float('inf')
+        while v != s:
+            u = parent[v]
+            chemin.append((u, v))
+            flot_chemin = min(flot_chemin, capacites[u][v] - flots[u][v])
+            v = u
+        chemin.reverse()
+
+        # Ne pas envoyer plus que ce qu'il manque
+        flot_envoye = min(flot_chemin, flot_demande - courant_flot)
+
+        for u, v in chemin:
+            flots[u][v] += flot_envoye
+            flots[v][u] -= flot_envoye
+            total_cout += flot_envoye * couts[u][v]
+
+        courant_flot += flot_envoye
+
+        if afficher:
+            print(f"\n Itération {iteration}")
+            chaine_affichable = " → ".join(nom_sommet(u, n) for u, _ in chemin) + f" → {nom_sommet(t, n)}"
+            print(f"Chaîne de coût minimal : {chaine_affichable}")
+            print(f"→ Flot envoyé sur cette chaîne : {flot_envoye}")
+            print(f"→ Coût actuel : {total_cout}")
+            iteration += 1
+
+    return total_cout, flots
