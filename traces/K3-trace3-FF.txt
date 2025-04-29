@@ -1,0 +1,79 @@
+
+Capacités (prop3) :
+      s   a   b   c   d   e   t
+  s   0   5   8   0   0   0   0
+  a   0   0   0   4   7   0   0
+  b   0   0   0   0   4   0   0
+  c   0   0   0   0   0   6   0
+  d   0   0   0   0   0   7   0
+  e   0   0   0   0   0   0  10
+  t   0   0   0   0   0   0   0
+
+Affichage de la table de capacité :
+      s   a   b   c   d   e   t
+  s   0   5   8   0   0   0   0
+  a   0   0   0   4   7   0   0
+  b   0   0   0   0   4   0   0
+  c   0   0   0   0   0   6   0
+  d   0   0   0   0   0   7   0
+  e   0   0   0   0   0   0  10
+  t   0   0   0   0   0   0   0
+Le graphe résiduel initial est le graphe de départ.
+
+Itération 1
+Le parcours en largeur
+Π(a) = s ; Π(b) = s ; Π(c) = a ; Π(d) = a ; Π(e) = c ; Π(t) = e
+Détection d'une chaîne améliorante : s → a → c → e → t de flot 4
+
+Modifications sur le graphe résiduel :
+      s   a   b   c   d   e   t
+  s   0   1   8   0   0   0   0
+  a   4   0   0   0   7   0   0
+  b   0   0   0   0   4   0   0
+  c   0   4   0   0   0   2   0
+  d   0   0   0   0   0   7   0
+  e   0   0   0   4   0   0   6
+  t   0   0   0   0   0   4   0
+
+Itération 2
+Le parcours en largeur
+Π(a) = s ; Π(b) = s ; Π(c) = e ; Π(d) = a ; Π(e) = d ; Π(t) = e
+Détection d'une chaîne améliorante : s → a → d → e → t de flot 1
+
+Modifications sur le graphe résiduel :
+      s   a   b   c   d   e   t
+  s   0   0   8   0   0   0   0
+  a   5   0   0   0   6   0   0
+  b   0   0   0   0   4   0   0
+  c   0   4   0   0   0   2   0
+  d   0   1   0   0   0   6   0
+  e   0   0   0   4   1   0   5
+  t   0   0   0   0   0   5   0
+
+Itération 3
+Le parcours en largeur
+Π(a) = d ; Π(b) = s ; Π(c) = e ; Π(d) = b ; Π(e) = d ; Π(t) = e
+Détection d'une chaîne améliorante : s → b → d → e → t de flot 4
+
+Modifications sur le graphe résiduel :
+      s   a   b   c   d   e   t
+  s   0   0   4   0   0   0   0
+  a   5   0   0   0   6   0   0
+  b   4   0   0   0   0   0   0
+  c   0   4   0   0   0   2   0
+  d   0   1   4   0   0   2   0
+  e   0   0   0   4   5   0   1
+  t   0   0   0   0   0   9   0
+
+
+Affichage du flot max
+        s    a    b    c    d    e    t
+   s       5/5  4/8                    
+   a                 4/4  1/7          
+   b                      4/4          
+   c                           4/6     
+   d                           5/7     
+   e                               9/10
+   t                                   
+
+Valeur du flot max = 9

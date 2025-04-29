@@ -1,0 +1,196 @@
+
+Capacités (prop4) :
+      s   a   b   c   d   e   t
+  s   0   5   9   0   0   0   0
+  a   0   0   0   7   4   0   0
+  b   0   0   0   0   6   0   0
+  c   0   0   0   0   0   5   0
+  d   0   0   0   0   0   6   0
+  e   0   0   0   0   0   0   7
+  t   0   0   0   0   0   0   0
+
+Capacités initiales :
+      s   a   b   c   d   e   t
+  s   0   5   9   0   0   0   0
+  a   0   0   0   7   4   0   0
+  b   0   0   0   0   6   0   0
+  c   0   0   0   0   0   5   0
+  d   0   0   0   0   0   6   0
+  e   0   0   0   0   0   0   7
+  t   0   0   0   0   0   0   0
+Le graphe résiduel initial est le graphe de départ.
+
+Itération 1
+Réétiqueter a à hauteur 1
+
+Itération 2
+Réétiqueter b à hauteur 1
+
+Itération 3
+Pousser 5 de a vers c
+
+Itération 4
+Pousser 6 de b vers d
+
+Itération 5
+Réétiqueter c à hauteur 1
+
+Itération 6
+Réétiqueter d à hauteur 1
+
+Itération 7
+Réétiqueter b à hauteur 8
+
+Itération 8
+Pousser 5 de c vers e
+
+Itération 9
+Pousser 6 de d vers e
+
+Itération 10
+Réétiqueter e à hauteur 1
+
+Itération 11
+Pousser 3 de b vers s
+
+Itération 12
+Pousser 7 de e vers t
+
+Itération 13
+Réétiqueter e à hauteur 2
+
+Itération 14
+Pousser 4 de e vers c
+
+Itération 15
+Réétiqueter c à hauteur 2
+
+Itération 16
+Pousser 4 de c vers a
+
+Itération 17
+Réétiqueter a à hauteur 2
+
+Itération 18
+Pousser 4 de a vers d
+
+Itération 19
+Réétiqueter d à hauteur 3
+
+Itération 20
+Pousser 4 de d vers a
+
+Itération 21
+Réétiqueter a à hauteur 3
+
+Itération 22
+Pousser 4 de a vers c
+
+Itération 23
+Réétiqueter c à hauteur 3
+
+Itération 24
+Pousser 4 de c vers e
+
+Itération 25
+Réétiqueter e à hauteur 4
+
+Itération 26
+Pousser 4 de e vers c
+
+Itération 27
+Réétiqueter c à hauteur 4
+
+Itération 28
+Pousser 4 de c vers a
+
+Itération 29
+Réétiqueter a à hauteur 4
+
+Itération 30
+Pousser 4 de a vers d
+
+Itération 31
+Réétiqueter d à hauteur 5
+
+Itération 32
+Pousser 4 de d vers a
+
+Itération 33
+Réétiqueter a à hauteur 5
+
+Itération 34
+Pousser 4 de a vers c
+
+Itération 35
+Réétiqueter c à hauteur 5
+
+Itération 36
+Pousser 4 de c vers e
+
+Itération 37
+Réétiqueter e à hauteur 6
+
+Itération 38
+Pousser 4 de e vers c
+
+Itération 39
+Réétiqueter c à hauteur 6
+
+Itération 40
+Pousser 4 de c vers a
+
+Itération 41
+Réétiqueter a à hauteur 6
+
+Itération 42
+Pousser 4 de a vers d
+
+Itération 43
+Réétiqueter d à hauteur 7
+
+Itération 44
+Pousser 4 de d vers a
+
+Itération 45
+Réétiqueter a à hauteur 7
+
+Itération 46
+Pousser 4 de a vers c
+
+Itération 47
+Réétiqueter c à hauteur 7
+
+Itération 48
+Pousser 4 de c vers e
+
+Itération 49
+Réétiqueter e à hauteur 8
+
+Itération 50
+Pousser 4 de e vers c
+
+Itération 51
+Réétiqueter c à hauteur 8
+
+Itération 52
+Pousser 4 de c vers a
+
+Itération 53
+Réétiqueter a à hauteur 8
+
+Itération 54
+Pousser 4 de a vers s
+
+
+Affichage du flot max
+      s   a   b   c   d   e   t
+  s     1/5 6/9                
+  a             1/7 0/4        
+  b                 6/6        
+  c                     1/5    
+  d                     6/6    
+  e                         7/7
+  t                            
+
+Valeur du flot max = 7

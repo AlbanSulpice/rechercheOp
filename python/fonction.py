@@ -36,13 +36,14 @@ def nom_sommet(i, n):
 def afficher_matrice(matrice, titre="Matrice"):
     n = len(matrice)
     print(f"\n{titre} :")
-    largeur = max(len(str(elem)) for ligne in matrice for elem in ligne)
 
-    # En-tête
+    # Par défaut, afficher sur 3 caractères minimum
+    largeur = max(max(len(str(elem)) for elem in ligne) for ligne in matrice)
+    largeur = max(largeur, 3)
+
     header = [" "] + [nom_sommet(j, n) for j in range(n)]
     print(" ".join(f"{col:>{largeur}}" for col in header))
 
-    # Lignes
     for i, ligne in enumerate(matrice):
         nom = nom_sommet(i, n)
         print(f"{nom:>{largeur}}", end=" ")
@@ -119,29 +120,28 @@ def ford_fulkerson(capacites, s, t, afficher=False):
 
 def pousser_reetiquer(capacites, s, t, afficher=False):
     n = len(capacites)
-
-    # Initialisation
     flots = [[0] * n for _ in range(n)]
     hauteurs = [0] * n
     exces = [0] * n
 
     hauteurs[s] = n  # hauteur source = n
 
-    # Saturer les arêtes sortantes de la source
     for v in range(n):
         flots[s][v] = capacites[s][v]
         flots[v][s] = -capacites[s][v]
         exces[v] = capacites[s][v]
     exces[s] = -sum(capacites[s])
 
-    # Liste des sommets à traiter (hors s et t)
     sommets = [i for i in range(n) if i != s and i != t]
-
     iteration = 1
+
+    if afficher:
+        afficher_matrice(capacites, "Capacités initiales")
+        print("Le graphe résiduel initial est le graphe de départ.\n")
+
     while any(exces[v] > 0 for v in sommets):
         for u in sommets:
             if exces[u] > 0:
-                # Cherche un voisin v où pousser
                 for v in range(n):
                     if capacites[u][v] - flots[u][v] > 0 and hauteurs[u] == hauteurs[v] + 1:
                         delta = min(exces[u], capacites[u][v] - flots[u][v])
@@ -151,12 +151,12 @@ def pousser_reetiquer(capacites, s, t, afficher=False):
                         exces[v] += delta
 
                         if afficher:
-                            print(f"\n Itération {iteration}")
+                            print(f"Itération {iteration}")
                             print(f"Pousser {delta} de {nom_sommet(u, n)} vers {nom_sommet(v, n)}")
+                            print()
                         iteration += 1
                         break
                 else:
-                    # Pas de poussée possible → réétiqueter
                     min_hauteur = float('inf')
                     for v in range(n):
                         if capacites[u][v] - flots[u][v] > 0:
@@ -164,12 +164,19 @@ def pousser_reetiquer(capacites, s, t, afficher=False):
                     if min_hauteur < float('inf'):
                         hauteurs[u] = min_hauteur + 1
                         if afficher:
-                            print(f"\n Itération {iteration}")
+                            print(f"Itération {iteration}")
                             print(f"Réétiqueter {nom_sommet(u, n)} à hauteur {hauteurs[u]}")
+                            print()
                         iteration += 1
 
     max_flow = sum(flots[s][v] for v in range(n))
+
+    if afficher:
+        afficher_matrice_flot(flots, capacites, "Affichage du flot max")
+        print(f"\nValeur du flot max = {max_flow}")
+
     return max_flow, flots
+
 
 def bellman(capacites, couts, flots, s):
     n = len(capacites)

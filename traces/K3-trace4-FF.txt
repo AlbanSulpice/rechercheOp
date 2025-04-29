@@ -1,0 +1,64 @@
+
+Capacités (prop4) :
+      s   a   b   c   d   e   t
+  s   0   5   9   0   0   0   0
+  a   0   0   0   7   4   0   0
+  b   0   0   0   0   6   0   0
+  c   0   0   0   0   0   5   0
+  d   0   0   0   0   0   6   0
+  e   0   0   0   0   0   0   7
+  t   0   0   0   0   0   0   0
+
+Affichage de la table de capacité :
+      s   a   b   c   d   e   t
+  s   0   5   9   0   0   0   0
+  a   0   0   0   7   4   0   0
+  b   0   0   0   0   6   0   0
+  c   0   0   0   0   0   5   0
+  d   0   0   0   0   0   6   0
+  e   0   0   0   0   0   0   7
+  t   0   0   0   0   0   0   0
+Le graphe résiduel initial est le graphe de départ.
+
+Itération 1
+Le parcours en largeur
+Π(a) = s ; Π(b) = s ; Π(c) = a ; Π(d) = a ; Π(e) = c ; Π(t) = e
+Détection d'une chaîne améliorante : s → a → c → e → t de flot 5
+
+Modifications sur le graphe résiduel :
+      s   a   b   c   d   e   t
+  s   0   0   9   0   0   0   0
+  a   5   0   0   2   4   0   0
+  b   0   0   0   0   6   0   0
+  c   0   5   0   0   0   0   0
+  d   0   0   0   0   0   6   0
+  e   0   0   0   5   0   0   2
+  t   0   0   0   0   0   5   0
+
+Itération 2
+Le parcours en largeur
+Π(a) = s ; Π(b) = s ; Π(c) = e ; Π(d) = b ; Π(e) = d ; Π(t) = e
+Détection d'une chaîne améliorante : s → b → d → e → t de flot 2
+
+Modifications sur le graphe résiduel :
+      s   a   b   c   d   e   t
+  s   0   0   7   0   0   0   0
+  a   5   0   0   2   4   0   0
+  b   2   0   0   0   4   0   0
+  c   0   5   0   0   0   0   0
+  d   0   0   2   0   0   4   0
+  e   0   0   0   5   2   0   0
+  t   0   0   0   0   0   7   0
+
+
+Affichage du flot max
+      s   a   b   c   d   e   t
+  s     5/5 2/9                
+  a             5/7 0/4        
+  b                 2/6        
+  c                     5/5    
+  d                     2/6    
+  e                         7/7
+  t                            
+
+Valeur du flot max = 7

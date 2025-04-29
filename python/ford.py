@@ -1,4 +1,11 @@
 from collections import deque
+def nom_sommet(i, n):
+    if i == 0:
+        return 's'
+    elif i == n - 1:
+        return 't'
+    else:
+        return chr(ord('a') + i - 1)  # a, b, c, ...
 
 def bfs_augmentant(capacites, flots, s, t, parents):
     n = len(capacites)
@@ -15,7 +22,11 @@ def bfs_augmentant(capacites, flots, s, t, parents):
                 queue.append(v)
                 parents[v] = u
                 visites[v] = True
-    return parents[t] != -1
+                if v == t:
+                    return True
+
+    return False
+
 
 def afficher_parcours(parents, s, n):
     chemins_parents = []
