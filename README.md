@@ -6,14 +6,24 @@
 
 ---
 
-Dans le dossier python vous pouvait retrouver tous les codes.
+Dans le dossier python vous pouvez retrouver tous les codes.
 Traces regroupe les traces d'exécution.
 Prop regroupe les fichiers .txt utilisés pour le programme.
-Compléxité regroupe les algorithmes et codes utilisés pour les tests ainsi que le rapport.
+Complexité regroupe les algorithmes et codes utilisés pour les tests ainsi que le rapport.
+
+---
+- Si vous etes sur Windows :
+1. **Double-clique sur `demarrer.bat`**  
+2. Une fenêtre `cmd` s’ouvre avec le menu interactif  
+3. Suivez les instructions pour :
+   - Choisir un numéro de problème (1 à 10)
+   - Choisir un algorithme (FF / PR)
+   - Entrer la valeur de flot si nécessaire
 
 ---
 
-1. **Double-clique sur `lancer_demo.bat`**  
+- Si vous etes sur Mac/Linux : 
+1. **Ouvrez le terminal dans le dossier du projet et tapez `./demarrer.sh`**  
 2. Une fenêtre `cmd` s’ouvre avec le menu interactif  
 3. Suivez les instructions pour :
    - Choisir un numéro de problème (1 à 10)
