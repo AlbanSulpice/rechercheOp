@@ -6,6 +6,13 @@
 
 ---
 
+Dans le dossier python vous pouvait retrouver tous les codes.
+Traces regroupe les traces d'exécution.
+Prop regroupe les fichiers .txt utilisés pour le programme.
+Compléxité regroupe les algorithmes et codes utilisés pour les tests ainsi que le rapport.
+
+---
+
 1. **Double-clique sur `lancer_demo.bat`**  
 2. Une fenêtre `cmd` s’ouvre avec le menu interactif  
 3. Suivez les instructions pour :
